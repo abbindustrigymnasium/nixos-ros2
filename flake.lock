@@ -1,27 +1,5 @@
 {
   "nodes": {
-    "aulabokning": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "utils": "utils"
-      },
-      "locked": {
-        "lastModified": 1758780712,
-        "narHash": "sha256-PXfHGu+pNsHGf2x9NGSGft/TpPFO0TY3+FrFGu/E2aY=",
-        "ref": "refs/heads/main",
-        "rev": "716c1d93b55a7a1aa530c2f3491b1038861facf5",
-        "revCount": 34,
-        "type": "git",
-        "url": "ssh://git@github.com/eritho23/aulabokning"
-      },
-      "original": {
-        "rev": "716c1d93b55a7a1aa530c2f3491b1038861facf5",
-        "type": "git",
-        "url": "ssh://git@github.com/eritho23/aulabokning"
-      }
-    },
     "crane": {
       "locked": {
         "lastModified": 1731098351,
@@ -55,22 +33,6 @@
         "owner": "nix-community",
         "repo": "disko",
         "type": "github"
-      }
-    },
-    "echoloungeuf": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1767685175,
-        "narHash": "sha256-PB4RWWwtAkkuNAlhlB9uR2551NTEalBJ6yvE/ZezOWE=",
-        "ref": "refs/heads/main",
-        "rev": "b3ad0e1589d7fdabfed0b94c012135423718a7fb",
-        "revCount": 53,
-        "type": "git",
-        "url": "ssh://git@github.com/Miraengel/GYARTE"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/Miraengel/GYARTE"
       }
     },
     "flake-compat": {
@@ -112,7 +74,7 @@
     },
     "flake-utils": {
       "inputs": {
-        "systems": "systems_2"
+        "systems": "systems"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -173,27 +135,6 @@
         "owner": "nix-community",
         "ref": "v0.4.2",
         "repo": "lanzaboote",
-        "type": "github"
-      }
-    },
-    "microvm": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ],
-        "spectrum": "spectrum"
-      },
-      "locked": {
-        "lastModified": 1767412754,
-        "narHash": "sha256-Rl54gtnxxjYzfZFCanu5CzgG3EQQc4AgAoatFL94jqg=",
-        "owner": "microvm-nix",
-        "repo": "microvm.nix",
-        "rev": "f4ae3dc4ee4c9b585b03c36bd73ef68d2a8eb3a9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "microvm-nix",
-        "repo": "microvm.nix",
         "type": "github"
       }
     },
@@ -267,22 +208,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1754340878,
-        "narHash": "sha256-lgmUyVQL9tSnvvIvBp7x1euhkkCho7n3TMzgjdvgPoU=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "cab778239e705082fe97bb4990e0d24c50924c04",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "pre-commit-hooks-nix": {
       "inputs": {
         "flake-compat": [
@@ -312,19 +237,14 @@
     },
     "root": {
       "inputs": {
-        "aulabokning": "aulabokning",
         "disko": "disko",
-        "echoloungeuf": "echoloungeuf",
         "lanzaboote": "lanzaboote",
-        "microvm": "microvm",
         "nix-ros-overlay": "nix-ros-overlay",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "sops-nix": "sops-nix",
-        "spetsctf": "spetsctf",
-        "spetsctf-services": "spetsctf-services",
-        "systems": "systems_4",
-        "treefmt-nix": "treefmt-nix_2"
+        "systems": "systems_2",
+        "treefmt-nix": "treefmt-nix"
       }
     },
     "rust-overlay": {
@@ -368,69 +288,6 @@
         "type": "github"
       }
     },
-    "spectrum": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1759482047,
-        "narHash": "sha256-H1wiXRQHxxPyMMlP39ce3ROKCwI5/tUn36P8x6dFiiQ=",
-        "ref": "refs/heads/main",
-        "rev": "c5d5786d3dc938af0b279c542d1e43bce381b4b9",
-        "revCount": 996,
-        "type": "git",
-        "url": "https://spectrum-os.org/git/spectrum"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://spectrum-os.org/git/spectrum"
-      }
-    },
-    "spetsctf": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ],
-        "treefmt-nix": "treefmt-nix",
-        "utils": "utils_2"
-      },
-      "locked": {
-        "lastModified": 1759264026,
-        "narHash": "sha256-bn9Jh0PQ8C/4TBYxG3DAwy1YqnZQSw4985tEnHIxT20=",
-        "owner": "fdABB-Gym-Samuel",
-        "repo": "SpetsCTF",
-        "rev": "d45aa5f9d5c2b95238c208d45a40cf4a934c100c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "fdABB-Gym-Samuel",
-        "repo": "SpetsCTF",
-        "rev": "d45aa5f9d5c2b95238c208d45a40cf4a934c100c",
-        "type": "github"
-      }
-    },
-    "spetsctf-services": {
-      "inputs": {
-        "microvm": [
-          "microvm"
-        ],
-        "nixpkgs": [
-          "nixpkgs-unstable"
-        ]
-      },
-      "locked": {
-        "lastModified": 1759004180,
-        "narHash": "sha256-+iyYV1NMK0ayLokYEDMpxSnXJUOvipyRIw8EifJuOdo=",
-        "ref": "refs/heads/main",
-        "rev": "08e89152156dcc24fcc111938283ee813f9cd796",
-        "revCount": 21,
-        "type": "git",
-        "url": "ssh://git@github.com/fdABB-Gym-Samuel/SpetsCTF-services"
-      },
-      "original": {
-        "rev": "08e89152156dcc24fcc111938283ee813f9cd796",
-        "type": "git",
-        "url": "ssh://git@github.com/fdABB-Gym-Samuel/SpetsCTF-services"
-      }
-    },
     "systems": {
       "locked": {
         "lastModified": 1681028828,
@@ -456,59 +313,11 @@
         "type": "github"
       },
       "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_3": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_4": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
         "id": "systems",
         "type": "indirect"
       }
     },
     "treefmt-nix": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1758206697,
-        "narHash": "sha256-/DbPkh6PZOgfueCbs3uzlk4ASU2nPPsiVWhpMCNkAd0=",
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "rev": "128222dc911b8e2e18939537bed1762b7f3a04aa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "treefmt-nix_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -525,42 +334,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "utils": {
-      "inputs": {
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "utils_2": {
-      "inputs": {
-        "systems": "systems_3"
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
         "type": "github"
       }
     }

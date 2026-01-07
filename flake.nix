@@ -11,9 +11,6 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-    # MicroVMs
-    microvm.url = "github:microvm-nix/microvm.nix";
-    microvm.inputs.nixpkgs.follows = "nixpkgs-unstable";
     # Disko
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -24,26 +21,6 @@
     # ROS2 overlays
     nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
     nix-ros-overlay.inputs.nixpkgs.follows = "nixpkgs";
-
-    ### FLAKE INPUTS FOR DEPLOYMENTS BELOW ###
-    spetsctf = {
-      url = "github:fdABB-Gym-Samuel/SpetsCTF/d45aa5f9d5c2b95238c208d45a40cf4a934c100c";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-    spetsctf-services = {
-      url = "git+ssh://git@github.com/fdABB-Gym-Samuel/SpetsCTF-services?rev=08e89152156dcc24fcc111938283ee813f9cd796";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-      inputs.microvm.follows = "microvm";
-    };
-    aulabokning = {
-      url = "git+ssh://git@github.com/eritho23/aulabokning?rev=716c1d93b55a7a1aa530c2f3491b1038861facf5";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    echoloungeuf = {
-      url = "git+ssh://git@github.com/Miraengel/GYARTE";
-      flake = false;
-    };
-    ### END FLAKE INPUTS FOR DEPLOYMENTS ###
   };
 
   outputs = {
@@ -54,7 +31,6 @@
     sops-nix,
     lanzaboote,
     treefmt-nix,
-    microvm,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -75,7 +51,6 @@
 
             # add sops secrets
             sops-nix.nixosModules.sops
-            microvm.nixosModules.host
           ];
         };
       }
