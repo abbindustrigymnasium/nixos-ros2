@@ -17,10 +17,6 @@
     # Lanzaboote
     lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
     lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
-
-    # ROS2 overlays
-    nix-ros-overlay.url = "github:lopsided98/nix-ros-overlay/master";
-    nix-ros-overlay.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
