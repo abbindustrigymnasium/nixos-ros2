@@ -6,15 +6,18 @@
 
   ros2-humble = inputs.nix-ros-overlay.overlays.default;
 
-  # Fix for separateDebugInfo requiring __structuredAttrs in ROS2 packages
-  ros2-structuredAttrs = final: prev: {
-    rosPackages = prev.rosPackages or {} // {
-      humble = (prev.rosPackages.humble or {}) // (prev.lib.mapAttrs (name: pkg:
-        if prev.lib.isDerivation pkg && (pkg.separateDebugInfo or false)
-        then pkg.overrideAttrs (old: {__structuredAttrs = true;})
-        else pkg
-      ) (prev.rosPackages.humble or {}));
-    };
+  # Fix for separateDebugInfo requiring __structuredAttrs
+  # This overrides stdenv to automatically add __structuredAttrs when needed
+  structuredAttrs-fix = final: prev: {
+    stdenv = prev.stdenv.override (old: {
+      mkDerivation = args:
+        prev.stdenv.mkDerivation (args
+          // (
+            if (args.separateDebugInfo or false) && ((args ? allowedRequisites) || (args ? allowedReferences) || (args ? disallowedRequisites) || (args ? disallowedReferences))
+            then {__structuredAttrs = true;}
+            else {}
+          ));
+    });
   };
 
   unstable-packages = final: _prev: {
