@@ -8,7 +8,6 @@
     ./users.nix
     ./nix.nix
     ./ros2-humble-minimal.nix
-    ./ros2-fix.nix
   ];
 
   # Change this to include hostname of device?

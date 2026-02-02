@@ -1,26 +1,19 @@
 {pkgs, lib, ...}: {
   # Fix for ROS2 packages requiring __structuredAttrs with separateDebugInfo
-  # This creates an overlay that wraps mkDerivation to automatically add
-  # __structuredAttrs when separateDebugInfo is enabled with reference restrictions
+  # Override ROS packages to add __structuredAttrs where needed
   nixpkgs.overlays = [
-    (final: prev: {
-      # Wrap mkDerivation to automatically fix the separateDebugInfo issue
-      mkDerivation = args:
-        let
-          needsStructuredAttrs =
-            (args.separateDebugInfo or false)
-            && (
-              (args ? allowedRequisites)
-              || (args ? allowedReferences)
-              || (args ? disallowedRequisites)
-              || (args ? disallowedReferences)
-            );
-          fixedArgs =
-            if needsStructuredAttrs
-            then args // {__structuredAttrs = true;}
-            else args;
-        in
-          prev.mkDerivation fixedArgs;
-    })
+    (final: prev: 
+      lib.optionalAttrs (prev ? rosPackages) {
+        rosPackages = prev.rosPackages // {
+          humble = lib.mapAttrs (name: pkg:
+            if lib.isDerivation pkg && (pkg.separateDebugInfo or false)
+            then pkg.overrideAttrs (old: {
+              __structuredAttrs = true;
+            })
+            else pkg
+          ) prev.rosPackages.humble;
+        };
+      }
+    )
   ];
 }
