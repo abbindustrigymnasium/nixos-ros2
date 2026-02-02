@@ -16,7 +16,8 @@
     disko.inputs.nixpkgs.follows = "nixpkgs";
     # Lanzaboote
     lanzaboote.url = "github:nix-community/lanzaboote/v0.4.2";
-    lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
+    # Don't follow nixpkgs to avoid broken rust builds
+    # lanzaboote.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
